@@ -1,0 +1,181 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  font-family: inherit;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: url('sea.jpg');
+}
+
+button {
+  height: 26px;
+  /* background-color: #ffe4f0; */
+  border: 1px solid #949494;
+  border: none;
+}
+
+.reset {
+  color: white;
+  background-color: #bc2d23de;
+  margin-left: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.word-input {
+  height: 26px;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 1px solid #949494;
+  border: none;
+  padding: 2px 7px 2px 7px;
+  margin-right: 10px;
+}
+
+.word-input:focus {
+  outline: none;
+  background-color: #ccddff7c;
+}
+
+.banner {
+  width: 100%;
+  height: 50px;
+  background-color: #00ffff1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  width: 100%;
+  height: calc(100% - 50px);
+  display: flex;
+  flex-direction: column;
+}
+
+.rules {
+  width: 200px;
+  color: white;
+  font-size: 21px;
+}
+
+.rules span {
+  text-decoration: wavy;
+}
+
+.level {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.space {
+  width: 400px;
+}
+
+.response button {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: none;
+  color: white;
+}
+
+.yes {
+  background-color: #28720b;
+  position: relative;
+  bottom: 5px;
+}
+
+.no {
+  background-color: #cd2417;
+  position: relative;
+  top: 5px;
+}
+
+.category {
+  font-size: 110px;
+  width: 10vw;
+}
+
+.c{
+  height: 100%;
+  background-color: #00bfff6b;
+}
+
+.ck {
+  height: 100%;
+  background-color: #0080809e;
+}
+
+.k {
+  height: 100%;
+  background-color: #8a2be2a8;
+}
+
+.word {
+  position: absolute;
+  /* border: 2px solid maroon; */
+  color: white;
+  font-size: 80px;
+  /* left: 220px; */
+  left: 26vw;
+  top: -100px;
+  transition: 2s;
+}
+
+.word span {
+  display: inline-block;
+}
+
+.word.level-1 {
+  top: 16%;
+}
+
+.word.level-2 {
+  top: 49%;
+}
+
+.word.level-3 {
+  top: 80%;
+}
+
+.word .part1 {
+  transition: 2s;
+  transform: translateX(-20px);
+}
+
+.word .part2 {
+  transition: 2s;
+  transform: translateX(20px);
+}
+
+.word:has(.blank.revealed) .part1,
+.word:has(.blank.revealed) .part2 {
+  transform: translateX(0px);
+}
+
+.blank {
+  /* opacity: 0; */
+  color: transparent;
+  /* width: 30px; */
+  border-bottom: 2px solid white;
+}
+
+.blank.revealed {
+  color: pink;
+  width: auto;
+}
+
+.level-1 .blank.revealed {
+  color: #e68d9d;
+}
+
