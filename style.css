@@ -74,7 +74,7 @@ button:hover {
 .rules {
   width: 25vw;
   color: white;
-  font-size: 2vw;
+  font-size: min(2vw, 18px);
 }
 
 .rules h4 {
@@ -141,7 +141,7 @@ button:hover {
   color: white;
   font-size: 7vw;
   left: 26vw;
-  top: -100px;
+  top: -130px;
   transition: 2s;
   line-height: 1;
   letter-spacing: 4px;
@@ -162,15 +162,25 @@ button:hover {
 }
 
 .word.level-1 {
-  top: 16%;
+  top: 18%;
 }
-
 .word.level-2 {
-  top: 49%;
+  top: 50%;
 }
-
 .word.level-3 {
   top: 82%;
+}
+
+@media(max-width: 700px) {
+  .word.level-1 {
+    top: 20%;
+  }
+  .word.level-2 {
+    top: 51%;
+  }
+  .word.level-3 {
+    top: 83%;
+  }
 }
 
 .word .part1 {
