@@ -5,43 +5,54 @@
   font-family: inherit;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Poppins", serif;
 }
 
 body {
   height: 100vh;
   background: url('sea.jpg');
+  
 }
 
 button {
-  height: 26px;
-  /* background-color: #ffe4f0; */
+  height: 32px;
+  background-color: #838383;
   border: 1px solid #949494;
   border: none;
+  opacity: .7;
+  transition: 1s;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.invisible {
+  opacity: 0;
 }
 
 .reset {
-  color: white;
   background-color: #bc2d23de;
   margin-left: 10px;
 }
 
 button:hover {
   cursor: pointer;
+  opacity: 1;
 }
 
 .word-input {
-  height: 26px;
+  height: 32px;
   box-sizing: border-box;
   font-size: 16px;
   border: 1px solid #949494;
   border: none;
   padding: 2px 7px 2px 7px;
   margin-right: 10px;
+  transition: 1s;
 }
 
 .word-input:focus {
   outline: none;
-  background-color: #ccddff7c;
+  background-color: #e7ecf7;
 }
 
 .banner {
@@ -61,10 +72,15 @@ button:hover {
 }
 
 .rules {
-  width: 200px;
+  width: 25vw;
   color: white;
-  font-size: 21px;
+  font-size: 2vw;
 }
+
+.rules h4 {
+  margin-bottom: 20px;
+}
+
 
 .rules span {
   text-decoration: wavy;
@@ -78,7 +94,7 @@ button:hover {
 }
 
 .space {
-  width: 400px;
+  width: 49vw;
 }
 
 .response button {
@@ -87,22 +103,21 @@ button:hover {
   height: 50px;
   border: none;
   color: white;
+  margin: 25px 0 25px 0;
 }
 
 .yes {
-  background-color: #28720b;
-  position: relative;
-  bottom: 5px;
+  background-color: #11678b;
+  background-color: #3d0a84;
 }
 
 .no {
-  background-color: #cd2417;
-  position: relative;
-  top: 5px;
+  background-color: #0c5c76;
 }
 
 .category {
   font-size: 110px;
+  font-size: 11vw;
   width: 10vw;
 }
 
@@ -123,13 +138,23 @@ button:hover {
 
 .word {
   position: absolute;
-  /* border: 2px solid maroon; */
   color: white;
-  font-size: 80px;
-  /* left: 220px; */
+  font-size: 7vw;
   left: 26vw;
   top: -100px;
   transition: 2s;
+  line-height: 1;
+  letter-spacing: 4px;
+}
+
+.word.small {
+  left: 28vw;
+}
+.word.medium {
+  left: 24vw;
+}
+.word.large {
+  left: 18vw;
 }
 
 .word span {
@@ -145,17 +170,17 @@ button:hover {
 }
 
 .word.level-3 {
-  top: 80%;
+  top: 82%;
 }
 
 .word .part1 {
   transition: 2s;
-  transform: translateX(-20px);
+  transform: translateX(-30px);
 }
 
 .word .part2 {
   transition: 2s;
-  transform: translateX(20px);
+  transform: translateX(30px);
 }
 
 .word:has(.blank.revealed) .part1,
@@ -164,15 +189,17 @@ button:hover {
 }
 
 .blank {
-  /* opacity: 0; */
   color: transparent;
-  /* width: 30px; */
-  border-bottom: 2px solid white;
+  border-bottom: 4px solid white;
+  width: 50px;
+  transition: 2s;
 }
 
 .blank.revealed {
   color: pink;
   width: auto;
+  border: none;
+
 }
 
 .level-1 .blank.revealed {

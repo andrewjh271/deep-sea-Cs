@@ -8,9 +8,7 @@ const blank = document.querySelector('.blank');
 
 const word = document.querySelector('.word');
 
-resetButton.addEventListener('click', reset);
-
-
+resetButton.addEventListener('click', hardReset);
 
 submit.addEventListener('click', start);
 
@@ -35,7 +33,16 @@ function start() {
   part2.textContent = end;
 
   word.classList.add('level-1');
-  console.log(beg, end);
+}
+
+function adjustWord(length) {
+  if (length <= 4) {
+    word.classList.add('small');
+  } else if (length <= 7) {
+    word.classList.add('medium');
+  } else {
+    word.classList.add('large');
+  }
 }
 
 yes1.addEventListener('click', goToLevel2);
@@ -60,11 +67,19 @@ function show(char) {
   blank.classList.add('revealed');
 }
 
-
 function reset() {
-  blank.textContent = '';
   blank.classList.remove('revealed');
   word.classList.remove('level-1');
   word.classList.remove('level-2');
   word.classList.remove('level-3');
+  word.classList.remove('small');
+  word.classList.remove('medium');
+  word.classList.remove('large');
+}
+
+function hardReset() {
+  input.value = '';
+  word.classList.add('invisible');
+  setTimeout(reset, 2000);
+  setTimeout(() => word.classList.remove('invisible'), 3000);
 }
