@@ -116,8 +116,7 @@ button:hover {
 }
 
 .category {
-  font-size: 110px;
-  font-size: 11vw;
+  font-size: min(11vw, 118px);
   width: 10vw;
 }
 
@@ -139,7 +138,7 @@ button:hover {
 .word {
   position: absolute;
   color: white;
-  font-size: 7vw;
+  font-size: min(7vw, 90px);
   left: 26vw;
   top: -130px;
   transition: 2s;
@@ -162,13 +161,25 @@ button:hover {
 }
 
 .word.level-1 {
-  top: 18%;
+  top: 17%;
 }
 .word.level-2 {
-  top: 50%;
+  top: 49%;
 }
 .word.level-3 {
-  top: 82%;
+  top: 81%;
+}
+
+@media(max-width: 1000px) {
+  .word.level-1 {
+    top: 19%;
+  }
+  .word.level-2 {
+    top: 50%;
+  }
+  .word.level-3 {
+    top: 82%;
+  }
 }
 
 @media(max-width: 700px) {
