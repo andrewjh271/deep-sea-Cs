@@ -16,6 +16,7 @@ body {
 .banner {
   width: 100%;
   height: 50px;
+  padding: 0;
   background-color: #00ffff1a;
   display: flex;
   justify-content: center;
@@ -55,7 +56,7 @@ button:hover {
 
 .word-input {
   height: 32px;
-  width: min(50vw, 180px);
+  width: min(50vw, 200px);
   box-sizing: border-box;
   background-color: #e7ecf7;
   font-size: 16px;
@@ -81,7 +82,7 @@ button:hover {
 
 .level {
   display: grid;
-  grid-template-columns: min(11vw, 118px) 3fr 1fr min(50px, 8vw);
+  grid-template-columns: min(11vw, 118px) 2fr 1fr min(50px, 8vw);
   align-items: center;
   padding: 0 2vw 0 2vw;
 }
