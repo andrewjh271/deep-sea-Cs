@@ -28,6 +28,13 @@ yes2.addEventListener('click', goToLevel2);
 no2.addEventListener('click', () => setTimeout(() => show('k'), 1000));
 no2.addEventListener('click', gotoLevel3);
 
+function setWindowHeight() {
+  document.body.style.height = `${window.innerHeight}px`;
+}
+
+setWindowHeight();
+window.addEventListener('resize', setWindowHeight);
+
 function start() {
   reset();
   const [beg, end] = input.value.match(/\w+/g);

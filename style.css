@@ -81,7 +81,7 @@ button:hover {
 
 .level {
   display: grid;
-  grid-template-columns: min(11vw, 118px) 1fr 28vw 50px;
+  grid-template-columns: min(11vw, 118px) 3fr 1fr min(50px, 8vw);
   align-items: center;
   padding: 0 2vw 0 2vw;
 }
@@ -92,15 +92,17 @@ button:hover {
 
 .rules {
   color: white;
+  margin-right: 2vw;
 }
 
 .rules h4 {
   margin-bottom: 1vh;
-  font-size: min(2.2vw, 20px);
+  font-size: min(2vw, 16px);
 }
 
 .rules ul {
   font-size: min(1.9vw, 16px);
+  padding-inline-start: 4ch;
 }
 
 .response {
@@ -113,7 +115,7 @@ button:hover {
 .response button {
   width: min(50px, 8vw);
   height: min(50px, 8vw);
-  font-size: min(2.2vw, 20px);
+  font-size: min(1.7vw, 15px);
   color: white;
   margin: 10px 0 10px 0;
 }
@@ -181,12 +183,12 @@ button:hover {
 
 .blank {
   color: transparent;
-  width: 1ch;
+  width: calc(1ch + 4px);
   transition: 2s;
 }
 
 .level-2 .blank {
-  width: 2ch;
+  width: calc(2ch + 4px);
 }
 
 .blank:after {
