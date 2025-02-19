@@ -149,6 +149,7 @@ button:hover {
 
 .word span {
   display: inline-block;
+  position: relative;
 }
 
 .word.level-1 {
@@ -178,15 +179,29 @@ button:hover {
 
 .blank {
   color: transparent;
-  border-bottom: 0.1ch solid white;
   width: 1ch;
+  transition: 2s;
+}
+
+.level-2 .blank {
+  width: 2ch;
+}
+
+.blank:after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  display: block;
+  border-bottom: 0.1ch solid white;
   transition: 2s;
 }
 
 .blank.revealed {
   color: pink;
-  width: auto;
-  border: none;
+}
+
+.blank.revealed:after {
+  border-bottom: 0.1ch solid transparent;
 }
 
 .level-1 .blank.revealed {

@@ -34,6 +34,7 @@ function start() {
   part1.textContent = beg;
   part2.textContent = end;
   goToLevel1();
+  input.value = '';
 }
 
 function goToLevel1() {
@@ -67,7 +68,6 @@ function reset() {
 }
 
 function hardReset() {
-  input.value = '';
   word.classList.add('invisible');
   setTimeout(reset, 2000);
   setTimeout(() => word.classList.remove('invisible'), 3000);
