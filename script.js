@@ -1,6 +1,9 @@
 const input = document.querySelector('.word-input');
 const submit = document.querySelector('.submit');
+const slider = document.querySelector('.slider');
+
 const resetButton = document.querySelector('.reset');
+const main = document.querySelector('.main');
 
 const part1 = document.querySelector('.part1');
 const part2 = document.querySelector('.part2');
@@ -19,6 +22,12 @@ const yes2 = level2.querySelector('.yes');
 
 submit.addEventListener('click', start);
 resetButton.addEventListener('click', hardReset);
+
+window.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    start();
+  }
+});
 
 yes1.addEventListener('click', goToLevel2);
 no1.addEventListener('click', goToLevel1);
@@ -72,10 +81,19 @@ function reset() {
   word.classList.remove('level-1');
   word.classList.remove('level-2');
   word.classList.remove('level-3');
+  word.classList.remove('word-highlight');
 }
 
 function hardReset() {
   word.classList.add('invisible');
   setTimeout(reset, 2000);
-  setTimeout(() => word.classList.remove('invisible'), 3000);
+  setTimeout(() => word.classList.remove('invisible'), 3300);
 }
+
+slider.addEventListener('click', () => {
+  main.classList.toggle('highlight-on');
+})
+
+word.addEventListener('click', () => {
+  word.classList.toggle('word-highlight');
+})

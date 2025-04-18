@@ -42,7 +42,7 @@ button:hover {
 }
 
 .banner button {
-  width: min(15vw, 55px);
+  width: min(15vw, 50px);
 }
 
 .submit {
@@ -56,7 +56,8 @@ button:hover {
 
 .word-input {
   height: 32px;
-  width: min(50vw, 200px);
+  width: min(37vw, 200px);
+  margin-left: 10px;
   box-sizing: border-box;
   background-color: #e7ecf7;
   font-size: 16px;
@@ -91,6 +92,18 @@ button:hover {
   font-size: min(10vw, 118px);
 }
 
+.c .category {
+  color: #023c53;
+}
+
+.ck .category {
+  color: #033035;
+}
+
+.k .category {
+  color: #1c003c;
+}
+
 .rules {
   color: white;
   margin-right: 2vw;
@@ -99,6 +112,52 @@ button:hover {
 .rules h4 {
   margin-bottom: 1vh;
   font-size: min(2vw, 16px);
+}
+
+span.highlight {
+  transition: 2s;
+}
+
+.highlight-on span.highlight {
+  animation: flash 1.4s ease-in-out infinite alternate;
+}
+
+.highlight-on .c .highlight,
+.highlight-on .level-1 .part2 {
+  color: #ffeb3b;
+  animation: flash 1.4s ease-in-out infinite alternate;
+}
+
+.highlight-on .ck .highlight,
+.highlight-on .level-2 .part1 {
+  color: #ffc107;
+  animation: flash 1.4s ease-in-out infinite alternate;
+}
+
+.word.word:has(.blank.revealed) .part1,
+.word.word:has(.blank.revealed) .part2 {
+  color: white;
+  animation: none;
+}
+
+.word-highlight.level-1 .part2 {
+  color: #ffeb3b !important;
+  animation: flash 1.4s ease-in-out infinite alternate !important;
+}
+
+.word-highlight.level-2 .part1 {
+  color: #ffc107 !important;
+  animation: flash 1.4s ease-in-out infinite alternate !important;
+}
+
+
+@keyframes flash {
+  0% {
+    filter: drop-shadow(0px 0px 1px #003442);
+  }
+  100% {
+    filter: drop-shadow(0px 0px 8px #003442); 
+  }
 }
 
 .rules ul {
@@ -150,6 +209,10 @@ button:hover {
   letter-spacing: 4px;
   text-align: center;
   transition: 2s;
+}
+
+.word:hover {
+  cursor: pointer;
 }
 
 .word span {
@@ -212,3 +275,62 @@ button:hover {
 .level-1 .blank.revealed {
   color: #e68d9d;
 }
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 65px;
+  height: 32px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.switch:hover {
+  cursor: pointer;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #4589b7;
+  transition: .4s;
+  font-size: 24px;
+}
+
+.slider:before {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  transition: .6s;
+
+  content: "bedtime";
+  color: #c1c1c1;
+  background-color: #263635;
+  padding-top: 4px;
+  padding-left: 6px;
+}
+
+input:checked + .slider:before {
+  transform: translateX(100%);
+  content: "wb_sunny";
+  color: #FFC107;;
+  background-color: #ffffff;
+  padding-top: 4px;
+  padding-left: 4px;
+}
+
