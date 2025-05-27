@@ -57,12 +57,14 @@ function goToLevel1() {
   word.classList.add('level-1');
   word.classList.remove('level-2');
   word.classList.remove('level-3');
+  syncHighlights();
 }
 
 function goToLevel2() {
   word.classList.add('level-2');
   word.classList.remove('level-1');
   word.classList.remove('level-3');
+  syncHighlights();
 }
 
 function gotoLevel3() {
@@ -88,6 +90,11 @@ function hardReset() {
   word.classList.add('invisible');
   setTimeout(reset, 2000);
   setTimeout(() => word.classList.remove('invisible'), 3300);
+}
+
+function syncHighlights() {
+  main.classList.toggle('highlight-on');
+  setTimeout(() => main.classList.toggle('highlight-on'), 20);
 }
 
 slider.addEventListener('click', () => {

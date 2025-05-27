@@ -119,8 +119,10 @@ span.highlight {
   transition: 2s;
 }
 
-.highlight-on span.highlight {
-  animation: flash 1.4s ease-in-out infinite alternate;
+@property --color {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: indigo;
 }
 
 .highlight-on .c .highlight,
@@ -132,7 +134,8 @@ span.highlight {
 .highlight-on .ck .highlight,
 .highlight-on .level-2 .part1 {
   color: orange;
-  animation: flash2 1.4s ease-in-out infinite alternate;
+  --color: #050051;
+  animation: flash 1.4s ease-in-out infinite alternate;
 }
 
 .word.word:has(.blank.revealed) .part1,
@@ -148,25 +151,16 @@ span.highlight {
 
 .word-highlight.level-2 .part1 {
   color: orange !important;
-  animation: flash2 1.4s ease-in-out infinite alternate !important;
+  --color: #050051;
+  animation: flash 1.4s ease-in-out infinite alternate !important;
 }
-
 
 @keyframes flash {
   0% {
-    text-shadow: 0 0 1px indigo;
+    text-shadow: 0 0 1px var(--color);
   }
   100% {
-    text-shadow: 0 0 10px indigo;
-  }
-}
-
-@keyframes flash2 {
-  0% {
-    text-shadow: 0 0 1px #050051;
-  }
-  100% {
-    text-shadow: 0 0 10px #050051;
+    text-shadow: 0 0 10px var(--color);
   }
 }
 
