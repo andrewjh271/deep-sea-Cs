@@ -49,6 +49,7 @@ function start() {
   const [beg, end] = input.value.match(/\w+/g);
   part1.textContent = beg;
   part2.textContent = end;
+  blank.textContent = '_';
   goToLevel1();
   input.value = '';
 }
@@ -88,8 +89,8 @@ function reset() {
 
 function hardReset() {
   word.classList.add('invisible');
-  setTimeout(reset, 2000);
-  setTimeout(() => word.classList.remove('invisible'), 3300);
+  setTimeout(reset, 1000);
+  setTimeout(() => word.classList.remove('invisible'), 2300);
 }
 
 function syncHighlights() {

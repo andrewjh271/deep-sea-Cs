@@ -212,7 +212,7 @@ span.highlight {
   line-height: 1;
   letter-spacing: 4px;
   text-align: center;
-  transition: 2s;
+  transition: top 1.8s, opacity 1s;
 }
 
 .word:hover {
