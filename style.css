@@ -112,6 +112,7 @@ button:hover {
 .rules h4 {
   margin-bottom: 1vh;
   font-size: min(2vw, 16px);
+  letter-spacing: 1px;
 }
 
 span.highlight {
@@ -124,14 +125,14 @@ span.highlight {
 
 .highlight-on .c .highlight,
 .highlight-on .level-1 .part2 {
-  color: #ffeb3b;
+  color: yellow;
   animation: flash 1.4s ease-in-out infinite alternate;
 }
 
 .highlight-on .ck .highlight,
 .highlight-on .level-2 .part1 {
-  color: #ffc107;
-  animation: flash 1.4s ease-in-out infinite alternate;
+  color: orange;
+  animation: flash2 1.4s ease-in-out infinite alternate;
 }
 
 .word.word:has(.blank.revealed) .part1,
@@ -141,22 +142,31 @@ span.highlight {
 }
 
 .word-highlight.level-1 .part2 {
-  color: #ffeb3b !important;
+  color: yellow !important;
   animation: flash 1.4s ease-in-out infinite alternate !important;
 }
 
 .word-highlight.level-2 .part1 {
-  color: #ffc107 !important;
-  animation: flash 1.4s ease-in-out infinite alternate !important;
+  color: orange !important;
+  animation: flash2 1.4s ease-in-out infinite alternate !important;
 }
 
 
 @keyframes flash {
   0% {
-    filter: drop-shadow(0px 0px 1px #003442);
+    text-shadow: 0 0 1px indigo;
   }
   100% {
-    filter: drop-shadow(0px 0px 8px #003442); 
+    text-shadow: 0 0 10px indigo;
+  }
+}
+
+@keyframes flash2 {
+  0% {
+    text-shadow: 0 0 1px #050051;
+  }
+  100% {
+    text-shadow: 0 0 10px #050051;
   }
 }
 
